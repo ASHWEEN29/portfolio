@@ -56,7 +56,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -255,7 +255,11 @@ img {
   padding: 0.75rem 2.5rem;
   font-weight: var(--font-semi);
   border-radius: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
+
 .button:hover {
   background-color: #fff;
   color: var(--first-color);
