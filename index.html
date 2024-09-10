@@ -57,7 +57,7 @@
     <section class="home bd-grid section" id="home">
       <div class="home-data">
         <h2 class="home-title">
-          Hi,<br />I am <span class="home-title-color">ASHWEEN RAJ</span><br /> 
+          Hi,I am <br /><span class="home-title-color">ASHWEENRAJ</span><br /> 
         </h2>
 
         <a href="https://drive.google.com/file/d/1GZAtvLjpWlzzaNMfI0OBzVA4TrVjEx2K/view?usp=sharing" target="_blank"
@@ -95,11 +95,6 @@
 
           </p>
           <br />
-          
-          <p>
-            Drop a mail ashweensridhar@gmail.com
-            <i style="color: #4070f4; font-size: 1.2rem; cursor: pointer" class="bx bx-copy" id="copy"></i>
-          </p>
         </div>
       </div>
     </section>
@@ -125,7 +120,7 @@
     <div class="education-data">
       <div class="education-names">
         <!-- <i class="bx bxl-html5 skills-icon"></i> -->
-        <span class="education-name">SSLC</span>
+        <span class="education-name">HSE</span>
         <p class="education-platform ">Velammal Matriculation Higher Secondary School</p>
         <p class="education-duration ">Pass Out Year : 2021</p>
 
@@ -135,7 +130,7 @@
     <div class="education-data">
       <div class="education-names">
         <!-- <i class="bx bxl-html5 skills-icon"></i> -->
-        <span class="education-name">SLC</span>
+        <span class="education-name">SSLC</span>
         <p class="education-platform ">Everwin Matriculation Higher Secondary School</p>
         <p class="education-duration ">Pass Out Year : 2019</p>
 
@@ -193,13 +188,45 @@
                 <span class="education-name" onclick="window.open('https://expensetracker-ashween.vercel.app/', '_blank')">EXPENSE TRACKER USING REACT</span>
               </div>
             </div>
+            <div class="education-container bd-grid">
+        
+              <div class="education-data">
+                <div class="education-names">
+                  <!-- <i class="bx bxl-html5 skills-icon"></i> -->
+                  <span class="education-name" onclick="window.open('https://ai-travel-planner-beige.vercel.app/', '_blank')">AI TRAVEL PLANNER</span>
+                </div>
+              </div>
             
         </div>
+       <!-- Contact Form Section -->
+<section class="contact section" id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="contact-container bd-grid">
+    <form id="contactForm" class="contact-form bd-grid">
+      <div class="form-group">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" id="name" name="name" required class="form-input">
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" name="email" required class="form-input">
+      </div>
+
+      <div class="form-group">
+        <label for="message" class="form-label">Message:</label>
+        <textarea id="message" name="message" rows="5" required class="form-input"></textarea>
+      </div>
+
+      <button type="submit" class="button">Send</button>
+    </form>
+  </div>
+</section>
+
       
   <!--===== FOOTER + CONTACT=====-->
   
   <footer class="footer section" id="contact">
-    <h2 class="section-title">CONTACT</h2>
     <p class="footer-title">V.S.ASHWEEN RAJ</p>
     <div class="footer-social">
       <a href="https://www.linkedin.com/in/ashween2964" target="_blank" class="footer-icon"><i
@@ -217,11 +244,51 @@
           <br />
           GitHub
           </i></a>
+
+          
     </div>
     
   </footer>
 
   <!--===== MAIN JS =====-->
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<<script type="text/javascript">
+  (function(){
+     emailjs.init({
+       publicKey: "FJ2XXZVDqHseoQKLX",
+     });
+  })();
+</script>
+<script>
+ document.getElementById('contactForm').addEventListener('submit', function(event) {
+     event.preventDefault(); // Prevent the form from submitting the usual way
+
+     // Collect form data
+     const name = document.getElementById('name').value;
+     const email = document.getElementById('email').value;
+     const message = document.getElementById('message').value;
+
+     // Send email using EmailJS
+     emailjs.send("service_m6hcbza", "template_sfwk5vn", {
+         name: name,
+         email: email,
+         message: message
+     })
+     .then(function(response) {
+         alert("SUCCESS! Your message has been sent.", response.status, response.text);
+
+         // Reset the form after successful submission
+         document.getElementById('contactForm').reset();
+         
+     }, function(error) {
+         alert("FAILED... Oops! Something went wrong.", error);
+     });
+ });
+</script>
+
+
   <script src="assets/js/main.js"></script>
 </body>
 
